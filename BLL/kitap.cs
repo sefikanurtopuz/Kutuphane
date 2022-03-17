@@ -26,11 +26,10 @@ namespace BLL
 
         public DataTable kitapListele()
         {
-            DataTable dtKitap = new DataTable();
-            dtKitap = exec.executeDT(sql.kitapListele(), null, false, ref hataMesaji);
-            return dtKitap;
+            DataTable dtKitaps = new DataTable();
+            dtKitaps = exec.executeDT(sql.kitapListele(), null, false, ref hataMesaji);
+            return dtKitaps;
         }
-
         public bool kitapEkle()
         {
             bool result= false;
@@ -43,6 +42,42 @@ namespace BLL
             _params.Add(new SqlParameter("@sayfasayisi", sayfasayisi));
 
             result=exec.execute(sql.kitapEkle(), _params.ToArray(), false, ref hataMesaji);
+
+            return result;
+        }
+        public DataTable kitapSec()
+        {
+            List<SqlParameter> _params = new List<SqlParameter>();
+            _params.Add(new SqlParameter("@kitapno", kitapno));
+            DataTable dtKitap = new DataTable();
+            dtKitap = exec.executeDT(sql.kitapSec(), _params.ToArray(), false, ref hataMesaji);
+            return dtKitap;
+        }
+        public bool kitapGuncelle()
+        {
+            bool result = false;
+
+            List<SqlParameter> _params = new List<SqlParameter>();
+            _params.Add(new SqlParameter("@kitapno", kitapno));
+            _params.Add(new SqlParameter("@isbn", isbn));
+            _params.Add(new SqlParameter("@kitapadi", kitapadi));
+            _params.Add(new SqlParameter("@yazarno", yazar));
+            _params.Add(new SqlParameter("@turno", tur));
+            _params.Add(new SqlParameter("@sayfasayisi", sayfasayisi));
+
+            result = exec.execute(sql.kitapGuncelle(), _params.ToArray(), false, ref hataMesaji);
+
+            return result;
+
+        }
+        public bool kitapSil()
+        {
+            bool result = false;
+
+            List<SqlParameter> _params = new List<SqlParameter>();
+            _params.Add(new SqlParameter("@kitapno", kitapno));
+
+            result = exec.execute(sql.kitapSil(), _params.ToArray(), false, ref hataMesaji);
 
             return result;
         }

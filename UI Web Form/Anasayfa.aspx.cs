@@ -1,6 +1,7 @@
 ﻿using BLL;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -43,39 +44,124 @@ namespace UI_Web_Form
             GridView1.DataSource = kitap.kitapListele();
             GridView1.DataBind();
         }
+        protected void InputBosalt()
+        {
+            //inputların boşaltılması
+            lblKitapId.Text = "";
+            txtIsbn.Text = "";
+            txtKitapAd.Text = "";
+            ddlYazar.SelectedValue = "0";
+            ddlTur.SelectedValue = "0";
+            txtSayfa.Text = "";
+        }
+
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
             PanelBasari.Visible = false;
             PanelHata.Visible = false;
 
-            lblKitapId.Text= GridView1.SelectedRow.Cells[1].Text;
-            txtIsbn.Text = GridView1.SelectedRow.Cells[2].Text;
-            txtKitapAd.Text = HttpUtility.HtmlDecode(GridView1.SelectedRow.Cells[3].Text);
-            ddlYazar.SelectedValue = "5";
-            ddlTur.SelectedItem.Text = HttpUtility.HtmlDecode(GridView1.SelectedRow.Cells[5].Text);
-            txtSayfa.Text = GridView1.SelectedRow.Cells[6].Text;
+            kitap.kitapno= int.Parse(GridView1.SelectedRow.Cells[1].Text);
 
-            kitap.yazar = ddlYazar.SelectedItem.Value;
-            kitap.tur = ddlTur.SelectedItem.Value;
+            DataTable dtKitap= kitap.kitapSec();
+
+            lblKitapId.Text = dtKitap.Rows[0]["kitapno"].ToString();
+            txtIsbn.Text = dtKitap.Rows[0]["isbnno"].ToString();
+            txtKitapAd.Text = dtKitap.Rows[0]["kitapadi"].ToString();
+            ddlYazar.SelectedValue = dtKitap.Rows[0]["yazarno"].ToString();
+            ddlTur.SelectedValue = dtKitap.Rows[0]["turno"].ToString();
+            txtSayfa.Text = dtKitap.Rows[0]["sayfasayisi"].ToString();
         }
 
         protected void btnKitapEkle_Click(object sender, EventArgs e)
         {
-            kitap.isbn=txtIsbn.Text;
-            kitap.kitapadi=txtKitapAd.Text;
-            kitap.yazar = ddlYazar.SelectedValue;
-            kitap.tur= ddlTur.SelectedValue;
-            kitap.sayfasayisi = int.Parse(txtSayfa.Text);
+            try
+            {
+                kitap.isbn = txtIsbn.Text;
+                kitap.kitapadi = txtKitapAd.Text;
+                kitap.yazar = ddlYazar.SelectedValue;
+                kitap.tur = ddlTur.SelectedValue;
+                kitap.sayfasayisi = int.Parse(txtSayfa.Text);
 
-            bool sonuc = kitap.kitapEkle();
-            if (sonuc == true)
-            {
-                PanelBasari.Visible = true;
-                GridListele();
+                bool sonuc = kitap.kitapEkle();
+                if (sonuc == true)
+                {
+                    PanelBasari.Visible = true;
+                    lblBasarili.Text = "Başarıyla kaydedilmiştir!";
+
+                    GridListele();
+                    InputBosalt();
+                }
+                else
+                {
+                    lblHata.Text = lblHata.Text + kitap.hataMesaji;
+                    PanelHata.Visible = true;
+                }
             }
-            else
+            catch (Exception ex)
             {
-                lblHata.Text = lblHata.Text + kitap.hataMesaji;
+                lblHata.Text = lblHata.Text + " " + ex.Message;
+                PanelHata.Visible = true;
+            }       
+        }
+
+        protected void btnKitapGuncelle_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                kitap.kitapno = int.Parse(lblKitapId.Text);
+                kitap.isbn = txtIsbn.Text;
+                kitap.kitapadi = txtKitapAd.Text;
+                kitap.yazar = ddlYazar.SelectedValue;
+                kitap.tur = ddlTur.SelectedValue;
+                kitap.sayfasayisi = int.Parse(txtSayfa.Text);
+
+                bool sonuc = kitap.kitapGuncelle();
+                if (sonuc == true)
+                {
+                    PanelBasari.Visible = true;
+                    lblBasarili.Text = "Başarıyla güncellenmiştir!";
+                    GridListele();
+                    InputBosalt();
+                }
+                else
+                {
+                    lblHata.Text = lblHata.Text + kitap.hataMesaji;
+                    PanelHata.Visible = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                lblHata.Text = lblHata.Text + " " + ex.Message;
+                PanelHata.Visible = true;
+            }
+        }
+
+        protected void btnKitapSil_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                kitap.kitapno = int.Parse(lblKitapId.Text);
+
+                bool sonuc = kitap.kitapSil();
+                // Silmek istediğinize emin misiniz alert eklenecek
+                // eğer evet derse aşağıdaki if çalışacak
+
+                if (sonuc == true)
+                {
+                    PanelBasari.Visible = true;
+                    lblBasarili.Text = "Başarıyla silinmiştir!";
+                    GridListele();
+                    InputBosalt();
+                }
+                else
+                {
+                    lblHata.Text = lblHata.Text + kitap.hataMesaji;
+                    PanelHata.Visible = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                lblHata.Text = lblHata.Text + " " + ex.Message;
                 PanelHata.Visible = true;
             }
         }

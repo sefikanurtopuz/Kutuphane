@@ -18,6 +18,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
     <div class="card">
         <div class="card-body">
+            <asp:Label ID="Label1" runat="server" Text="Label">Kitap No:</asp:Label>
             <asp:Label ID="lblKitapId" runat="server" Text="" class="fst-normal"></asp:Label>
             <br />
             <asp:TextBox ID="txtIsbn" runat="server" class="form-control"></asp:TextBox>
@@ -32,9 +33,9 @@
             <br />
             <asp:Button ID="btnKitapEkle" runat="server" Text="Yeni Kitap Ekle" class="btn btn-outline-dark" OnClick="btnKitapEkle_Click" />
             &nbsp;
-            <asp:Button ID="btnKitapGuncelle" runat="server" Text="Güncelle" class="btn btn-outline-dark" />
+            <asp:Button ID="btnKitapGuncelle" runat="server" Text="Güncelle" class="btn btn-outline-dark" OnClick="btnKitapGuncelle_Click" />
             &nbsp;
-            <asp:Button ID="btnKitapSil" runat="server" Text="Sil" class="btn btn-outline-dark" />
+            <asp:Button ID="btnKitapSil" runat="server" Text="Sil" class="btn btn-outline-dark" OnClick="btnKitapSil_Click" />
             &nbsp;
         </div>
     </div>
@@ -56,7 +57,7 @@
                 <use xlink:href="#check-circle-fill" />
             </svg>
             <div>
-                <asp:Label ID="lblBasarili" runat="server" Text="Başarıyla kaydedilmiştir!"></asp:Label>
+                <asp:Label ID="lblBasarili" runat="server" ></asp:Label>
             </div>
         </div>
     </asp:Panel>

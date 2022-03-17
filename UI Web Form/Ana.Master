@@ -62,11 +62,11 @@
     <form id="form1" runat="server">
         <div class="row">
             <div class="col-1"></div>
-            <div class="col-6">
+            <div class="col-7">
                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                 </asp:ContentPlaceHolder>
             </div>
-             <div class="col-4">
+             <div class="col-3">
                 <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
                 </asp:ContentPlaceHolder>
             </div>
