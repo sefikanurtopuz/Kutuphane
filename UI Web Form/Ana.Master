@@ -34,9 +34,9 @@
                     </a>
 
                     <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                        <li><a href="#" class="nav-link px-2 link-dark">Kitap</a></li>
-                        <li><a href="#" class="nav-link px-2 link-dark">Yazar</a></li>
-                        <li><a href="#" class="nav-link px-2 link-dark">Kategori</a></li>
+                        <li><a href="Anasayfa.aspx" class="nav-link px-2 link-dark">Kitap</a></li>
+                        <li><a href="Yazar.aspx" class="nav-link px-2 link-dark">Yazar</a></li>
+                        <li><a href="Kategori.aspx" class="nav-link px-2 link-dark">Kategori</a></li>
                         <%--//hyperlink--%>
                     </ul>
 
@@ -45,13 +45,13 @@
                             <img src="images/indir.png" alt="mdo" width="32" height="32" class="rounded-circle">
                         </a>
                         <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
-                            <li><a class="dropdown-item" href="#">New project...</a></li>
-                            <li><a class="dropdown-item" href="#">Settings</a></li>
-                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Yeni Kitap Ödünç Al</a></li>
+                            <li><a class="dropdown-item" href="#">Şifre Değiştir</a></li>
+                            <li><a class="dropdown-item" href="#">Profil</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="#">Sign out</a></li>
+                            <li><a class="dropdown-item" href="#">Çıkış</a></li>
                         </ul>
                     </div>
                 </div>
