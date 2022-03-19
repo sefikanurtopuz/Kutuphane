@@ -31,8 +31,8 @@ namespace UI_Web_Form
 
 
             //dropdownlist türün yüklenmesi
-            ddlTur.DataValueField = "turno";
-            ddlTur.DataTextField = "turadi";
+            ddlTur.DataValueField = "Kategori No";
+            ddlTur.DataTextField = "Kategori Adı";
             ddlTur.DataSource = tur.turListele();
             ddlTur.DataBind();
             ddlTur.Items.Insert(0, new ListItem("Seçiniz...", "0"));
