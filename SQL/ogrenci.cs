@@ -10,7 +10,7 @@ namespace SQL
     {
         public string ogrenciGiris()
         {
-            return "select * from ogrenci where (kullaniciadi = @kullaniciadi and sifre = @sifre) or ogrno = @id;";
+            return "select * from ogrenci where kullaniciadi = @kullaniciadi and sifre = @sifre;";
         }
     }
 }
