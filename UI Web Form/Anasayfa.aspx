@@ -35,7 +35,7 @@
             &nbsp;
             <asp:Button ID="btnKitapGuncelle" runat="server" Text="Güncelle" class="btn btn-outline-dark" OnClick="btnKitapGuncelle_Click" />
             &nbsp;
-            <asp:Button ID="btnKitapSil" runat="server" Text="Sil" class="btn btn-outline-dark" OnClick="btnKitapSil_Click" />
+            <asp:Button ID="btnKitapSil" runat="server" Text="Sil" class="btn btn-outline-dark" OnClick="btnKitapSil_Click" OnClientClick="return confirm('Silmek istediğinize emin misiniz?');" />
             &nbsp;
         </div>
     </div>
