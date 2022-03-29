@@ -41,15 +41,16 @@
                     </ul>
 
                     <br />
-                    <asp:Label ID="lblProfil" runat="server"></asp:Label>
+                    <asp:Label ID="lblProfile" runat="server" Text="Merhaba "></asp:Label>
+                    <br />
                     <div class="dropdown text-end">
                         <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown">
                             <img src="images/indir.png" alt="mdo" width="32" height="32" class="rounded-circle">
                         </a>
                         <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
                             <li><a class="dropdown-item" href="#">Yeni Kitap Ödünç Al</a></li>
-                            <li><a class="dropdown-item" href="#">Şifre Değiştir</a></li>
-                            <li><a class="dropdown-item" href="#">Profil</a></li>
+                            <li><a class="dropdown-item" href="#">Giriş Bilgilerini Değiştir</a></li>
+                            <li><a class="dropdown-item" href="Profil.aspx">Profil</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>

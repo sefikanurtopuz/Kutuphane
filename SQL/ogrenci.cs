@@ -12,5 +12,9 @@ namespace SQL
         {
             return "select * from ogrenci where kullaniciadi = @kullaniciadi and sifre = @sifre;";
         }
+        public string ogrenciGuncelle()
+        {
+            return "update ogrenci set ograd=@ograd, ogrsoyad=@ogrsoyad, cinsiyet=@cinsiyet, dtarih=@dtarih, sinif=@sinif where ogrno=@ogrno";
+        }
     }
 }

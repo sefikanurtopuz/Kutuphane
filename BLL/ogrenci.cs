@@ -18,43 +18,14 @@ namespace BLL
         public int ogrno { get; set; }
         public string ograd { get; set; }
         public string ogrsoyad { get; set; }
+        public string cinsiyet { get; set; }
+        public DateTime dtarih { get; set; }
+        public string sinif { get; set; }
         public string kullaniciadi { get; set; }
         public string sifre { get; set; }
 
         public string hataMesaji = "";
 
-        //public void ara(ref string _hataMesaji)
-        //{
-        //    //Parameters:
-        //    List<SqlParameter> _params = new List<SqlParameter>();
-        //    _params.Add(new SqlParameter("@kullaniciadi", kullaniciadi));
-        //    _params.Add(new SqlParameter("@sifresi", sifre));
-        //    _params.Add(new SqlParameter("@id", ogrno));
-
-        //    //database
-        //    _hataMesaji = "";
-        //    DataTable dtOgrenci = exec.executeDT(sql.ogrenciGiris(), _params.ToArray(), false, ref _hataMesaji);
-
-        //    //class map
-        //    if (_hataMesaji == "" && dtOgrenci != null && dtOgrenci.Rows.Count > 0)
-        //    {
-        //        ogrno = int.Parse(dtOgrenci.Rows[0]["ogrno"].ToString());
-        //        ograd = dtOgrenci.Rows[0]["ograd"].ToString();
-        //        ogrsoyad = dtOgrenci.Rows[0]["ogrsoyad"].ToString();
-        //        kullaniciadi = dtOgrenci.Rows[0]["kullaniciadi"].ToString();
-        //        sifre = dtOgrenci.Rows[0]["sifre"].ToString();
-        //    }
-        //    else
-        //    {
-        //        _hataMesaji = "Kullanıcı bilgisi alınamadı!";
-
-        //        ogrno = 0;
-        //        ograd = "";
-        //        ogrsoyad = "";
-        //        kullaniciadi = "";
-        //        sifre = "";
-        //    }
-        //}
         public DataTable ogrenciGiris()
         {
             List<SqlParameter> _params = new List<SqlParameter>();
@@ -65,6 +36,22 @@ namespace BLL
             dtOgrenci = exec.executeDT(sql.ogrenciGiris(), _params.ToArray(), false, ref hataMesaji);
 
             return dtOgrenci;
+        }
+        public bool ogrenciGuncelle()
+        {
+            bool result = false;
+
+            List<SqlParameter> _params = new List<SqlParameter>();
+            _params.Add(new SqlParameter("@ogrno", ogrno));
+            _params.Add(new SqlParameter("@ograd", ograd));
+            _params.Add(new SqlParameter("@ogrsoyad", ogrsoyad));
+            _params.Add(new SqlParameter("@cinsiyet", cinsiyet));
+            _params.Add(new SqlParameter("@dtarih", dtarih));
+            _params.Add(new SqlParameter("@sinif", sinif));
+
+            result = exec.execute(sql.ogrenciGuncelle(), _params.ToArray(), false, ref hataMesaji);
+
+            return result;
         }
     }
 }

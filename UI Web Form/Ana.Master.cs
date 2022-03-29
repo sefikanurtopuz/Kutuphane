@@ -14,7 +14,7 @@ namespace UI_Web_Form
         {
             if (IsPostBack == true) return;
 
-            lblProfil.Text =((DataTable)Session["profil"]).Rows[0]["ograd"].ToString();
+            lblProfile.Text += ((DataTable)Session["profile"]).Rows[0]["ograd"].ToString();
         }
     }
 }

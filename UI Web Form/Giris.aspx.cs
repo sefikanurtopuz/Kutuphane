@@ -32,7 +32,7 @@ namespace UI_Web_Form
             if (dtOgrenci.Rows.Count > 0)
             {
                 FormsAuthentication.RedirectFromLoginPage(ogrenci.kullaniciadi, false);
-                Session["profil"]=dtOgrenci;
+                Session["profile"]=dtOgrenci;
                 Response.Redirect(FormsAuthentication.DefaultUrl);
             }
             else
