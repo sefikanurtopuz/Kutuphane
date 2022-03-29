@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -11,7 +12,9 @@ namespace UI_Web_Form
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (IsPostBack == true) return;
 
+            lblProfil.Text =((DataTable)Session["profil"]).Rows[0]["ograd"].ToString();
         }
     }
 }

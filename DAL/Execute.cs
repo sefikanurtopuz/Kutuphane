@@ -11,7 +11,7 @@ namespace DAL
     public class Execute
     {
         //connection string global sabit olarak tanimlandi (user/windows auth.)
-        public const string _cs = @"Server=DESKTOP-HD12A4U\SQLEXPRESS;Database=SP501Kutuphane;User Id=sa;Password=12345678;";
+        public const string _cs = @"Server=Z36-11\SQLEXPRESS;Database=SP501Kutuphane;User Id=sa;Password=12345678;";
 
         public DataTable executeDT(string _sql, SqlParameter[] _params, bool isProcedure, ref string _exceptionMessage)
         {

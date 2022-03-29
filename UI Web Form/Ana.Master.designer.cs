@@ -15,6 +15,15 @@ namespace UI_Web_Form
     {
 
         /// <summary>
+        /// lblProfil control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblProfil;
+
+        /// <summary>
         /// form1 control.
         /// </summary>
         /// <remarks>
