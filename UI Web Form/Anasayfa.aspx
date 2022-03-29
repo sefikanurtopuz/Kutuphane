@@ -18,17 +18,22 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
     <div class="card">
         <div class="card-body">
-            <asp:Label ID="Label1" runat="server" Text="Label">Kitap No:</asp:Label>
+            <asp:Label ID="Label1" runat="server" Text="Kitap No" class="fw-bold text-decoration-underline"></asp:Label>
             <asp:Label ID="lblKitapId" runat="server" Text="" class="fst-normal"></asp:Label>
             <br />
+            <asp:Label ID="Label2" runat="server" Text="ISBN No" class="fw-bold text-decoration-underline"></asp:Label>
             <asp:TextBox ID="txtIsbn" runat="server" class="form-control"></asp:TextBox>
             <br />
+            <asp:Label ID="Label3" runat="server" Text="Kitap" class="fw-bold text-decoration-underline"></asp:Label>
             <asp:TextBox ID="txtKitapAd" runat="server" class="form-control"></asp:TextBox>
             <br />
+            <asp:Label ID="Label4" runat="server" Text="Yazar" class="fw-bold text-decoration-underline"></asp:Label>
             <asp:DropDownList ID="ddlYazar" runat="server" class="form-select"></asp:DropDownList>
             <br />
+            <asp:Label ID="Label5" runat="server" Text="Kategori" class="fw-bold text-decoration-underline"></asp:Label>
             <asp:DropDownList ID="ddlTur" runat="server" class="form-select"></asp:DropDownList>
             <br />
+            <asp:Label ID="Label6" runat="server" Text="Sayfa Sayısı" class="fw-bold text-decoration-underline"></asp:Label>
             <asp:TextBox ID="txtSayfa" runat="server" class="form-control"></asp:TextBox>
             <br />
             <asp:Button ID="btnKitapEkle" runat="server" Text="Yeni Kitap Ekle" class="btn btn-outline-dark" OnClick="btnKitapEkle_Click" />

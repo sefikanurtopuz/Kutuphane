@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="islemler.cs" />
     <Compile Include="kitap.cs" />
     <Compile Include="ogrenci.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

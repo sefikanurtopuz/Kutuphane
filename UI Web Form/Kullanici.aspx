@@ -1,27 +1,17 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Ana.Master" AutoEventWireup="true" CodeBehind="Profil.aspx.cs" Inherits="UI_Web_Form.Profil" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Ana.Master" AutoEventWireup="true" CodeBehind="Kullanici.aspx.cs" Inherits="UI_Web_Form.Kullanici" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="card">
         <div class="card-body">
             <asp:Label ID="Label1" runat="server" class="fw-bold text-decoration-underline">Öğrenci No:</asp:Label>
             <asp:Label ID="lblOgrenciId" runat="server" Text="" class="fst-normal"></asp:Label>
             <br />
-            <asp:Label ID="Label2" runat="server" Text="Ad" class="fw-bold text-decoration-underline"></asp:Label>
-            <asp:TextBox ID="txtAd" runat="server" class="form-control"></asp:TextBox>
+            <asp:Label ID="Label2" runat="server" Text="Kullanıcı Adı" class="fw-bold text-decoration-underline"></asp:Label>
+            <asp:TextBox ID="txtKullaniciAdi" runat="server" class="form-control"></asp:TextBox>
             <br />
-            <asp:Label ID="Label3" runat="server" Text="Soyad" class="fw-bold text-decoration-underline"></asp:Label>
-            <asp:TextBox ID="txtSoyad" runat="server" class="form-control"></asp:TextBox>
+            <asp:Label ID="Label3" runat="server" Text="Şifre" class="fw-bold text-decoration-underline"></asp:Label>
+            <asp:TextBox ID="txtSifre" runat="server" class="form-control"></asp:TextBox>
             <br />
-            <asp:Label ID="Label4" runat="server" Text="Cinsiyet" class="fw-bold text-decoration-underline"></asp:Label>
-            <asp:TextBox ID="txtCinsiyet" runat="server" class="form-control"></asp:TextBox>
-            <br />
-            <asp:Label ID="Label5" runat="server" Text="Doğum Tarihi" class="fw-bold text-decoration-underline"></asp:Label>
-            <asp:TextBox ID="txtDTarih" runat="server" class="form-control"></asp:TextBox>
-            <br />
-            <asp:Label ID="Label6" runat="server" Text="Sınıf" class="fw-bold text-decoration-underline"></asp:Label>
-            <asp:TextBox ID="txtSinif" runat="server" class="form-control"></asp:TextBox>
-            <br />
-            <asp:Button ID="btnProfilGuncelle" runat="server" Text="Güncelle" class="btn btn-outline-dark" OnClick="btnProfilGuncelle_Click" />
+            <asp:Button ID="btnKullaniciGuncelle" runat="server" Text="Güncelle" class="btn btn-outline-dark" OnClick="btnKullaniciGuncelle_Click" />
         </div>
     </div>
 </asp:Content>
@@ -57,5 +47,4 @@
             </div>
         </div>
     </asp:Panel>
-
 </asp:Content>

@@ -2,20 +2,19 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="col-md-6 offset-md-3">
-        <asp:GridView ID="GridView1" runat="server" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Vertical" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
-            <AlternatingRowStyle BackColor="White" />
+        <asp:GridView ID="GridView1" runat="server" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
+            <AlternatingRowStyle BackColor="#CCCCCC" />
             <Columns>
                 <asp:CommandField ButtonType="Button" ShowSelectButton="True" />
             </Columns>
-            <FooterStyle BackColor="#CCCC99" />
-            <HeaderStyle BackColor="#6B696B" Font-Bold="True" ForeColor="White" />
-            <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" />
-            <RowStyle BackColor="#F7F7DE" />
-            <SelectedRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
-            <SortedAscendingCellStyle BackColor="#FBFBF2" />
-            <SortedAscendingHeaderStyle BackColor="#848384" />
-            <SortedDescendingCellStyle BackColor="#EAEAD3" />
-            <SortedDescendingHeaderStyle BackColor="#575357" />
+            <FooterStyle BackColor="#CCCCCC" />
+            <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
+            <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
+            <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
+            <SortedAscendingCellStyle BackColor="#F1F1F1" />
+            <SortedAscendingHeaderStyle BackColor="#808080" />
+            <SortedDescendingCellStyle BackColor="#CAC9C9" />
+            <SortedDescendingHeaderStyle BackColor="#383838" />
         </asp:GridView>
         </div>
 </asp:Content>
@@ -25,8 +24,10 @@
             <asp:Label ID="Label1" runat="server" Text="Label">Yazar No:</asp:Label>
             <asp:Label ID="lblYazarId" runat="server" Text="" class="fst-normal"></asp:Label>
             <br />
+            <asp:Label ID="Label2" runat="server" Text="Yazar Adı" class="fw-bold text-decoration-underline"></asp:Label>
             <asp:TextBox ID="txtYazarAd" runat="server" class="form-control"></asp:TextBox>
             <br />
+            <asp:Label ID="Label3" runat="server" Text="Yazar Soyadı" class="fw-bold text-decoration-underline"></asp:Label>
             <asp:TextBox ID="txtYazarSoyad" runat="server" class="form-control"></asp:TextBox>
             <br />
             <asp:Button ID="btnYazarEkle" runat="server" Text="Yeni Yazar Ekle" class="btn btn-outline-dark" OnClick="btnYazarEkle_Click" />

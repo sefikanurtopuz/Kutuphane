@@ -1,31 +1,37 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Ana.Master" AutoEventWireup="true" CodeBehind="Profil.aspx.cs" Inherits="UI_Web_Form.Profil" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Ana.Master" AutoEventWireup="true" CodeBehind="Islemler.aspx.cs" Inherits="UI_Web_Form.Islemler" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="card">
-        <div class="card-body">
-            <asp:Label ID="Label1" runat="server" class="fw-bold text-decoration-underline">Öğrenci No:</asp:Label>
-            <asp:Label ID="lblOgrenciId" runat="server" Text="" class="fst-normal"></asp:Label>
-            <br />
-            <asp:Label ID="Label2" runat="server" Text="Ad" class="fw-bold text-decoration-underline"></asp:Label>
-            <asp:TextBox ID="txtAd" runat="server" class="form-control"></asp:TextBox>
-            <br />
-            <asp:Label ID="Label3" runat="server" Text="Soyad" class="fw-bold text-decoration-underline"></asp:Label>
-            <asp:TextBox ID="txtSoyad" runat="server" class="form-control"></asp:TextBox>
-            <br />
-            <asp:Label ID="Label4" runat="server" Text="Cinsiyet" class="fw-bold text-decoration-underline"></asp:Label>
-            <asp:TextBox ID="txtCinsiyet" runat="server" class="form-control"></asp:TextBox>
-            <br />
-            <asp:Label ID="Label5" runat="server" Text="Doğum Tarihi" class="fw-bold text-decoration-underline"></asp:Label>
-            <asp:TextBox ID="txtDTarih" runat="server" class="form-control"></asp:TextBox>
-            <br />
-            <asp:Label ID="Label6" runat="server" Text="Sınıf" class="fw-bold text-decoration-underline"></asp:Label>
-            <asp:TextBox ID="txtSinif" runat="server" class="form-control"></asp:TextBox>
-            <br />
-            <asp:Button ID="btnProfilGuncelle" runat="server" Text="Güncelle" class="btn btn-outline-dark" OnClick="btnProfilGuncelle_Click" />
-        </div>
-    </div>
+    <asp:GridView ID="GridView1" runat="server" BackColor="White" BorderColor="#999999" BorderStyle="Solid" BorderWidth="1px" CellPadding="3" ForeColor="Black" GridLines="Vertical">
+        <AlternatingRowStyle BackColor="#CCCCCC" />
+        <Columns>
+            <asp:CommandField ButtonType="Button" ShowSelectButton="True" />
+        </Columns>
+        <FooterStyle BackColor="#CCCCCC" />
+        <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
+        <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
+        <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
+        <SortedAscendingCellStyle BackColor="#F1F1F1" />
+        <SortedAscendingHeaderStyle BackColor="#808080" />
+        <SortedDescendingCellStyle BackColor="#CAC9C9" />
+        <SortedDescendingHeaderStyle BackColor="#383838" />
+    </asp:GridView>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
+    <div class="card">
+        <div class="card-body">
+            <asp:Label ID="Label1" runat="server" Text="İşlem No" class="fw-bold text-decoration-underline"></asp:Label>
+            <asp:Label ID="lblIslemId" runat="server" Text="" class="fst-normal"></asp:Label>
+            <br />
+            <asp:Label ID="Label2" runat="server" Text="Kitap" class="fw-bold text-decoration-underline"></asp:Label>
+            <asp:DropDownList ID="ddlKitap" runat="server" class="form-control"></asp:DropDownList>
+            <br />
+            <asp:Label ID="Label3" runat="server" Text="Alış Tarihi" class="fw-bold text-decoration-underline"></asp:Label>
+            <asp:TextBox ID="txtATarih" runat="server" class="form-control"></asp:TextBox>
+            <br />
+            <asp:Button ID="btnKitapAl" runat="server" Text="Yeni Kitap Ödünç Al" class="btn btn-outline-dark"/>
+        </div>
+    </div>
+    <br />
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
         <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
             <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
@@ -43,7 +49,7 @@
                 <use xlink:href="#check-circle-fill" />
             </svg>
             <div>
-                <asp:Label ID="lblBasarili" runat="server"></asp:Label>
+                <asp:Label ID="lblBasarili" runat="server" ></asp:Label>
             </div>
         </div>
     </asp:Panel>
@@ -57,5 +63,4 @@
             </div>
         </div>
     </asp:Panel>
-
 </asp:Content>

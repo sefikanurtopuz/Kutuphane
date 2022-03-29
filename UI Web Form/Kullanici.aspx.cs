@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 
 namespace UI_Web_Form
 {
-    public partial class Profil : System.Web.UI.Page
+    public partial class Kullanici : System.Web.UI.Page
     {
         //Global
         ogrenci ogrenci = new ogrenci();
@@ -18,32 +18,27 @@ namespace UI_Web_Form
         {
             if (IsPostBack == true) return;
 
-            //öğrenci bilgilerinin yüklenmesi
+            //kullanici bilgilerinin yüklenmesi
 
             lblOgrenciId.Text = ((DataTable)Session["profile"]).Rows[0]["ogrno"].ToString();
             ogrenci.ogrno = int.Parse(lblOgrenciId.Text);
 
             DataTable dtOgrenci = ogrenci.ogrenciListele();
 
-            txtAd.Text = dtOgrenci.Rows[0]["ograd"].ToString();
-            txtSoyad.Text = dtOgrenci.Rows[0]["ogrsoyad"].ToString();
-            txtCinsiyet.Text = dtOgrenci.Rows[0]["cinsiyet"].ToString();
-            txtDTarih.Text = dtOgrenci.Rows[0]["dtarih"].ToString();
-            txtSinif.Text= dtOgrenci.Rows[0]["sinif"].ToString();
+            txtKullaniciAdi.Text = dtOgrenci.Rows[0]["kullaniciadi"].ToString();
+            txtSifre.Text = dtOgrenci.Rows[0]["sifre"].ToString();
+            
         }
 
-        protected void btnProfilGuncelle_Click(object sender, EventArgs e)
+        protected void btnKullaniciGuncelle_Click(object sender, EventArgs e)
         {
             try
             {
                 ogrenci.ogrno = int.Parse(lblOgrenciId.Text);
-                ogrenci.ograd = txtAd.Text;
-                ogrenci.ogrsoyad = txtSoyad.Text;
-                ogrenci.cinsiyet = txtCinsiyet.Text;
-                ogrenci.dtarih = DateTime.Parse(txtDTarih.Text);
-                ogrenci.sinif = txtSinif.Text;
+                ogrenci.kullaniciadi = txtKullaniciAdi.Text;
+                ogrenci.sifre = txtSifre.Text;
 
-                bool sonuc = ogrenci.ogrenciGuncelle();
+                bool sonuc = ogrenci.kullaniciGuncelle();
                 if (sonuc == true)
                 {
                     PanelBasari.Visible = true;

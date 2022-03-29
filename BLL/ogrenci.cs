@@ -37,6 +37,17 @@ namespace BLL
 
             return dtOgrenci;
         }
+        public DataTable ogrenciListele()
+        {
+            List<SqlParameter> _params = new List<SqlParameter>();
+            _params.Add(new SqlParameter("@ogrno", ogrno));
+
+            DataTable dtOgrenci = new DataTable();
+            dtOgrenci = exec.executeDT(sql.ogrenciListele(), _params.ToArray(), false, ref hataMesaji);
+
+            return dtOgrenci;
+
+        }
         public bool ogrenciGuncelle()
         {
             bool result = false;
@@ -50,6 +61,20 @@ namespace BLL
             _params.Add(new SqlParameter("@sinif", sinif));
 
             result = exec.execute(sql.ogrenciGuncelle(), _params.ToArray(), false, ref hataMesaji);
+
+            return result;
+        }
+
+        public bool kullaniciGuncelle()
+        {
+            bool result = false;
+
+            List<SqlParameter> _params = new List<SqlParameter>();
+            _params.Add(new SqlParameter("@ogrno", ogrno));
+            _params.Add(new SqlParameter("@kullaniciadi", kullaniciadi));
+            _params.Add(new SqlParameter("@sifre", sifre));
+
+            result = exec.execute(sql.kullaniciGuncelle(), _params.ToArray(), false, ref hataMesaji);
 
             return result;
         }

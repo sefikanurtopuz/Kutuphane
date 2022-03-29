@@ -15,6 +15,15 @@ namespace UI_Web_Form
     {
 
         /// <summary>
+        /// form1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+
+        /// <summary>
         /// lblProfile control.
         /// </summary>
         /// <remarks>
@@ -24,13 +33,13 @@ namespace UI_Web_Form
         protected global::System.Web.UI.WebControls.Label lblProfile;
 
         /// <summary>
-        /// form1 control.
+        /// btnCikis control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.Button btnCikis;
 
         /// <summary>
         /// ContentPlaceHolder1 control.

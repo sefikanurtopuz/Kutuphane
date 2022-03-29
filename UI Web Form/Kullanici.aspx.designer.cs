@@ -11,7 +11,7 @@ namespace UI_Web_Form
 {
 
 
-    public partial class Profil
+    public partial class Kullanici
     {
 
         /// <summary>
@@ -42,13 +42,13 @@ namespace UI_Web_Form
         protected global::System.Web.UI.WebControls.Label Label2;
 
         /// <summary>
-        /// txtAd control.
+        /// txtKullaniciAdi control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtAd;
+        protected global::System.Web.UI.WebControls.TextBox txtKullaniciAdi;
 
         /// <summary>
         /// Label3 control.
@@ -60,76 +60,22 @@ namespace UI_Web_Form
         protected global::System.Web.UI.WebControls.Label Label3;
 
         /// <summary>
-        /// txtSoyad control.
+        /// txtSifre control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSoyad;
+        protected global::System.Web.UI.WebControls.TextBox txtSifre;
 
         /// <summary>
-        /// Label4 control.
+        /// btnKullaniciGuncelle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label4;
-
-        /// <summary>
-        /// txtCinsiyet control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCinsiyet;
-
-        /// <summary>
-        /// Label5 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label5;
-
-        /// <summary>
-        /// txtDTarih control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDTarih;
-
-        /// <summary>
-        /// Label6 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label6;
-
-        /// <summary>
-        /// txtSinif control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSinif;
-
-        /// <summary>
-        /// btnProfilGuncelle control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnProfilGuncelle;
+        protected global::System.Web.UI.WebControls.Button btnKullaniciGuncelle;
 
         /// <summary>
         /// PanelBasari control.

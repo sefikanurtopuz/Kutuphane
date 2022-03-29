@@ -94,6 +94,7 @@
     <Content Include="images\indir.png" />
     <Content Include="images\logo.gif" />
     <Content Include="images\t.png" />
+    <Content Include="Islemler.aspx" />
     <Content Include="js\bootstrap.bundle.js" />
     <Content Include="js\bootstrap.bundle.min.js" />
     <Content Include="js\bootstrap.esm.js" />
@@ -101,6 +102,7 @@
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="Kategori.aspx" />
+    <Content Include="Kullanici.aspx" />
     <Content Include="Profil.aspx" />
     <Content Include="Web.config" />
     <Content Include="Yazar.aspx" />
@@ -130,12 +132,26 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Islemler.aspx.cs">
+      <DependentUpon>Islemler.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Islemler.aspx.designer.cs">
+      <DependentUpon>Islemler.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Kategori.aspx.cs">
       <DependentUpon>Kategori.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Kategori.aspx.designer.cs">
       <DependentUpon>Kategori.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Kullanici.aspx.cs">
+      <DependentUpon>Kullanici.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Kullanici.aspx.designer.cs">
+      <DependentUpon>Kullanici.aspx</DependentUpon>
     </Compile>
     <Compile Include="Profil.aspx.cs">
       <DependentUpon>Profil.aspx</DependentUpon>
